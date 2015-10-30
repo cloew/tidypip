@@ -1,0 +1,5 @@
+git+git://github.com/cloew/KaoDecorators
+git+git://github.com/cloew/KaoModules
+git+git://github.com/cloew/KaoCommand
+
+-e .

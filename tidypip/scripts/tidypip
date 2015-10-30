@@ -1,8 +1,10 @@
+#!/usr/bin/python3
+from tidypip import TidyPip
 import sys
 
 def main(args):
     """ Run the main file """
-    # Add logic to main
+    TidyPip('tidypip').run(args)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
