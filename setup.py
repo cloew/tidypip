@@ -6,4 +6,5 @@ setup(name='tidypip',
       author='Chris Loew',
       author_email='cloew123@gmail.com',
       packages=['tidypip'],
+      install_requires=['kao_command']
      )
