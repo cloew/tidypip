@@ -8,4 +8,5 @@ class Install:
         
     def run(self, *, packages):
         """ Run the command """
-        PipWrapper().install(packages)
+        pip = PipWrapper()
+        pip.install(packages)
