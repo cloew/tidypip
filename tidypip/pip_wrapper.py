@@ -1,3 +1,4 @@
+from .pip_versions import PipVersions
 from subprocess import call, check_output
 
 class PipWrapper:
@@ -17,4 +18,4 @@ class PipWrapper:
                 package, version = packageInfo.split('==')
                 versions[package] = version
                 
-        return versions
+        return PipVersions(versions)
