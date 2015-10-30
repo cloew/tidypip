@@ -1,5 +1,5 @@
 from ..pip_wrapper import PipWrapper
-from kao_command.args import Arg, FlagArg, BareWords
+from kao_command.args import Arg, FlagArg
 
 class Install:
     """ Command to install a package """
