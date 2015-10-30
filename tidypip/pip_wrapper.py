@@ -5,7 +5,7 @@ class PipWrapper:
     
     def install(self, packages):
         """ Install the given packages """
-        call(['pip', 'install'] + packages)
+        call(['pip', 'install'] + [package.installAs for package in packages])
         
     def versions(self):
         """ Return the current version information """

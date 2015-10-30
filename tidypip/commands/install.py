@@ -1,4 +1,5 @@
 from ..pip_wrapper import PipWrapper
+from ..packages import NamedPackage
 from kao_command.args import Arg, FlagArg
 
 class Install:
@@ -8,5 +9,6 @@ class Install:
         
     def run(self, *, packages):
         """ Run the command """
+        packages = [NamedPackage(package) for package in packages]
         pip = PipWrapper()
         pip.install(packages)
