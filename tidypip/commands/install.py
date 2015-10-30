@@ -1,5 +1,5 @@
+from ..pip_wrapper import PipWrapper
 from kao_command.args import Arg, FlagArg, BareWords
-from subprocess import call
 
 class Install:
     """ Command to install a package """
@@ -8,4 +8,4 @@ class Install:
         
     def run(self, *, packages):
         """ Run the command """
-        call(['pip', 'install'] + packages)
+        PipWrapper().install(packages)
