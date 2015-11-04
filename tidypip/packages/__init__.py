@@ -1,1 +1,1 @@
-from .named_package import NamedPackage
+from .package_factory import PackageFactory

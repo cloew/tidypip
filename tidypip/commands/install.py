@@ -1,6 +1,6 @@
 from ..requirements_file import RequirementsFile
 from ..pip_wrapper import PipWrapper
-from ..packages import NamedPackage
+from ..packages import PackageFactory
 
 from kao_command.args import Arg, FlagArg
 
@@ -12,7 +12,7 @@ class Install:
         
     def run(self, *, packages, save):
         """ Run the command """
-        packages = [NamedPackage(package) for package in packages]
+        packages = PackageFactory.buildAll(packages)
         pip = PipWrapper()
         pip.install(packages)
         
