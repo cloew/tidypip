@@ -10,7 +10,8 @@ class PipWrapper:
     
     def install(self, packages):
         """ Install the given packages """
-        call([self.pipCmd, 'install'] + [package.installAs for package in packages])
+        args = [self.pipCmd, 'install'] + [package.installAs for package in packages]
+        call(args)
         
     def versions(self):
         """ Return the current version information """
