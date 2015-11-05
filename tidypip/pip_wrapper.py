@@ -4,9 +4,13 @@ from subprocess import call, check_output
 class PipWrapper:
     """ Helper class to manage calling the proper Pip command """
     
+    def __init__(self, pipCmd='pip'):
+        """ Initialize with the pip command to call """
+        self.pipCmd = pipCmd
+    
     def install(self, packages):
         """ Install the given packages """
-        call(['pip', 'install'] + [package.installAs for package in packages])
+        call([self.pipCmd, 'install'] + [package.installAs for package in packages])
         
     def versions(self):
         """ Return the current version information """
