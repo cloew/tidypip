@@ -4,14 +4,17 @@ from subprocess import call, check_output
 class PipWrapper:
     """ Helper class to manage calling the proper Pip command """
     
-    def __init__(self, pipCmd='pip'):
+    def __init__(self, pipCmd=None):
         """ Initialize with the pip command to call """
+        if pipCmd is None:
+            pipCmd = 'pip'
         self.pipCmd = pipCmd
     
     def install(self, packages):
         """ Install the given packages """
         args = [self.pipCmd, 'install'] + [package.installAs for package in packages]
-        call(args)
+        print(args)
+        # call(args)
         
     def versions(self):
         """ Return the current version information """
@@ -19,7 +22,7 @@ class PipWrapper:
         versions = {}
         for packageInfo in freezeInfo.split('\n'):
             packageInfo = packageInfo.strip()
-            if packageInfo != '':
+            if packageInfo != '' and '==' in packageInfo:
                 package, version = packageInfo.split('==')
                 versions[package] = version
                 
